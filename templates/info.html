@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend-программист</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+</head>
+<body>
+<header>
+    <div class="name">
+        <p style="margin-top: 50px">Frontend-программист</p>
+        <img class="logo" src="{% static 'images/logotip.png' %}">
+    </div>
+</header>
+<main>
+    <div class="body">
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li>
+                        <div><a href="/">Главная</a></div>
+                    </li>
+                    <li>
+                        <div style="background: #FDEE30; border-radius: 0px 15px 15px 0px;"><a
+                                href={% url 'relevance' %}>Востребованность</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'location' %}>География</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'abilities' %}>Навыки</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'hh' %}>Последние вакансии</a></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="home_text" style="top: 200px">
+            {% for data in context %}
+                <img class="demand_graph_1" src="{{ data.graph_salary_level.url }}"/>
+                <img class="demand_graph_2" src="{{ data.graph_num_vacancy.url }}"/>
+                <div class="tables">
+                    {{ data.table|safe }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Сидоренко Егор Сергеевич АТ-31</p>
+</footer>
+</body>
+</html>
