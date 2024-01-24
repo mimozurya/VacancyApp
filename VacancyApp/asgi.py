@@ -14,3 +14,5 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'VacancyApp.settings')
 
 application = get_asgi_application()
+
+# влияют с wsgi на локальный сервер

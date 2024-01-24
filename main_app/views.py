@@ -8,7 +8,7 @@ from .models import *
 from main_app.api.head_hunter.v1 import HeadHunter
 
 
-def home_page(request):
+def home_page(request): #хранит бизнес-логику приложения
     return render(request, 'index.html',
                   {'context': Main.objects.all()})
 

@@ -4,7 +4,7 @@ import os
 import sys
 
 
-def main():
+def main(): #через manage.py происходит все взаимодействие с бд
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'VacancyApp.settings')
     try:
